@@ -11,7 +11,7 @@ description: 天下无难事，只要肯放弃。
 
 **知名的CAP理论**
 
-![file](https://graph.baidu.com/resource/222e2e1afdd0b101063cb01589597227.png)
+![file](https://finnlee87.github.io/img/dt1.jpeg)
 
 
 CAP理论：指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可得兼。
@@ -32,7 +32,7 @@ CAP理论的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 **开源实现**
 
-![file](https://graph.baidu.com/resource/222ed35e5b00be498f96301589597373.png)
+![file](https://finnlee87.github.io/img/dt2.jpeg)
 
 * 其中应用程序(Application Program ，简称AP)：AP定义事务边界（定义事务开始和结束）并访问事务边界内的资源。
 
