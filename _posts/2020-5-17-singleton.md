@@ -109,7 +109,7 @@ public class Singleton {
     }
 }
 ```
-这次我们缩小了synchronized的范围，且把INSTANCE使用了volatile修饰，是使用双重check避免了在INSTANCE不为null时还在等待锁的问题，但是代码看起来有点难懂，是不是可能还有更加完美的方式呢，看如下代码：
+这次我们缩小了synchronized的范围，且把INSTANCE使用了volatile修饰，同时使用双重check避免了在INSTANCE不为null时还在等待锁的问题，但是代码看起来有点难懂，是不是可能还有更加完美的方式呢，看如下代码：
 
 ```
 public class Singleton {
@@ -132,7 +132,7 @@ public class Singleton {
 
 **另一种模式实现**
 
-以上方式仍然存在问题（毕竟我们是吹毛求疵的Coder），因为私有发放并不安全，我们仍然可以通过反射使用AccessibleObject.setAccessible来创建的实例，同样序列化readObject也可以做到创建新的实例，于是有大神发明了如下实现方式：
+以上方式仍然存在问题（毕竟我们是吹毛求疵的Coder），因为私有构造方法并不安全，我们仍然可以通过反射使用AccessibleObject.setAccessible来创建的实例，同样序列化readObject也可以做到创建新的实例，于是有大神发明了如下实现方式：
 
 ```java
 public class Singleton {
