@@ -27,3 +27,15 @@ RocketMQ集群分为多种模式，比如主从，双主，双主从等；其中
 
 当Consumer使用Docker部署的时候会出现相同的instance name的情况，这是因为RocketMQ client模式使用的IP+进程号的方式来生成instance name, 而在docker里取到的IP竟然是docker0（比如172.12.0.1），进程号在docker容器内则都是相同的，而从出现了负载均衡的错误，导致部分queue无法消费；解决方法是手动设置系统变量“rocketmq.client.name”，使用一个唯一性的值如snowflake，这样就会覆盖进程号部分，而从获得不同的instance name
 
+**当使用主从同步且同步刷盘**
+
+当使用主从同步且同步刷盘模式时，当发送频率高的话，容易出现"broker busy, xxx"错误，此时需要优化broker配置，增加如下配置
+
+```
+#根据服务器CPU配置
+sendMessageThreadPoolNums=16
+useReentrantLockWhenPutMessage=true
+#default is 200ms, change to 1000ms
+waitTimeMillsInSendQueue=1000
+```
+
