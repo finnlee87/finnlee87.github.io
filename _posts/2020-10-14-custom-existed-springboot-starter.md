@@ -15,5 +15,40 @@ SpringBoot Starter的实现由于Coder水平的不同，一般会分为容易扩
 
 **标准的扩展性好的Starter**
 
+#### 1.引入已有的Starter，如
+
+```xml
+<dependency>
+  <groupId>com.example</groupId>
+  <artifactId>thirdparty-starter</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+其中包含AutoConfiguration
+
+```java
+public class DemoAutoConfiguration {
+  @Bean
+  @ConditionalOnMissingBean
+  public DemoBean demoBean() {
+    return new DemoBean();
+  }
+}
+```
+
+#### 2.在自定义的新的Starter中对支持覆盖的Bean进行覆盖并调整AutoConfiuration的顺序
+
+```java
+@AutoConfigureBefore(DemoAutoConfigration.class)
+public class MyAutoConfiguration {
+  @Bean
+  public DemoBean demoBean() {
+    DemoBean demoBean = new DemoBean();
+    demoBean.setName("My demo bean")
+    return demoBean;
+  }
+}
+```
 
 **扩展性不好的Starter**
