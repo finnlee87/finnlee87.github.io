@@ -51,7 +51,7 @@ public class MyAutoConfiguration {
 
 ##### 3.配置spring.factories
 
-```
+```properties
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration
 ```
 
@@ -66,7 +66,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAut
 ##### 2.使用AutoConfigurationImportFilter排除掉已有的AutoConfiguration
 
 在spring.factories中增加
-```
+```properties
 org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=com.example.MyImportFilter
 ```
 
@@ -104,7 +104,7 @@ public class MyAutoConfiguration {
 ```
 
 ##### 4.配置spring.factories
-```
+```properties
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration
 org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=com.example.MyImportFilter
 ```
