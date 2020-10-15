@@ -15,7 +15,7 @@ SpringBoot Starter的实现由于Coder水平的不同，一般会分为容易扩
 
 **标准的扩展性好的Starter**
 
-#### 1.引入已有的Starter，如
+##### 1.引入已有的Starter，如
 
 ```xml
 <dependency>
@@ -37,7 +37,7 @@ public class DemoAutoConfiguration {
 }
 ```
 
-#### 2.在自定义的新的Starter中对支持覆盖的Bean进行覆盖并调整AutoConfiuration的顺序
+##### 2.在自定义的新的Starter中对支持覆盖的Bean进行覆盖并调整AutoConfiuration的顺序
 
 ```java
 @AutoConfigureBefore(DemoAutoConfigration.class)
@@ -51,7 +51,7 @@ public class MyAutoConfiguration {
 }
 ```
 
-#### 3.配置spring.factories
+##### 3.配置spring.factories
 
 ```
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration
