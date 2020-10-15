@@ -24,9 +24,7 @@ SpringBoot Starter的实现由于Coder水平的不同，一般会分为容易扩
   <version>1.0.0</version>
 </dependency>
 ```
-
 其中包含AutoConfiguration
-
 ```java
 public class DemoAutoConfiguration {
   @Bean
@@ -58,3 +56,6 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAut
 ```
 
 **扩展性不好的Starter**
+
+对于不是很“标准”的Starter，一般处理方式有两种，第一种就是引入其依赖的jar包，然后不引入其Starter，模仿其Starter进行一个实现；第二种方式是因为其没有依赖jar包，或者说Starter就仅仅是一个Jar或者几个类而已，这时则需要排除到其AutoConfiguration的加载。
+
