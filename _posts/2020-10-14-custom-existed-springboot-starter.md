@@ -51,4 +51,10 @@ public class MyAutoConfiguration {
 }
 ```
 
+#### 3.配置spring.factories
+
+```
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration
+```
+
 **扩展性不好的Starter**
