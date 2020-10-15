@@ -103,7 +103,7 @@ public class MyAutoConfiguration {
 }
 ```
 
-#### 4.配置spring.factories
+##### 4.配置spring.factories
 ```
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration
 org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=com.example.MyImportFilter
