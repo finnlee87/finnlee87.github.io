@@ -2,7 +2,7 @@
 title: Finn's Blog # 你的博客名字，可以定义修订
 header-img: "img/green.jpg"
 tagline: "cn"  
-description: "经验分享"  # 一句话描述你的博客
+description: "技术,Java,Spring,Spring Cloud,微服务,架构,架构设计,分布式技术"  # 一句话描述你的博客
 baseurl: ""
 url: "https://finnlee87.github.io"  # 此处填写你的博客地址 
 
