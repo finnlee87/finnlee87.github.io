@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一次分布式任务幂等处理的探索
-date: 2020-10-14
+date: 2020-10-23
 categories: blog
 tags: [架构,分布式任务,幂等]
 description: 天下无难事，只要肯放弃。
