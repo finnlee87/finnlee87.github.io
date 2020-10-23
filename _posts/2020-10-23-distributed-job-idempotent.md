@@ -39,6 +39,7 @@ if (flag == null) {
     dao.insertOrUpdate(data)
     //提交事务
     Transaction.commit()
+    redisClient.set('20200101', '1')
 }
 ```
 这样是否就可以了呢？显然是不行的，因为在分布式场景下，可能有两个以上节点并发执行，当它们并发执行到“flag = redisClient.get('20200101')”，得到的flag可能都是null，这时就仍会出现多次执行业务逻辑的问题。
