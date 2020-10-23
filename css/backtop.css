@@ -2,7 +2,8 @@
 #back-top {
   position: fixed;
   bottom: 30px;
-  right: 80px;
+  right: 40px;
+  z-index: 2000;
 }
 #back-top a {
   width: 54px;
