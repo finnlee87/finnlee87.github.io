@@ -36,7 +36,7 @@ demo1List.forEach(demo1 -> {
     demo1.setDemo2(demo2FilterList.get(0));
 })
 ```
-以上的方式其实复杂度基本没有任何变化，计算开始了stream的parellel，只是利用的多线程优势，复杂度仍然没有进步
+以上的方式其实复杂度基本没有任何变化，即使计算开始了stream的parellel，只是利用的多线程优势，复杂度仍然没有进步
 
 那……推荐的样子是什么呢？如下
 ```java
